@@ -114,7 +114,7 @@ public class ArrayUtils {
             return false;
         }
         for (int i = 0; i < a.length; i++) {
-            if (a[i].length != b[i].length || !Arrays.equals(a[i], b[i])) {
+            if (!Arrays.equals(a[i], b[i])) {
                 return false;
             }
         }
