@@ -121,7 +121,15 @@ public class ArrayUtils {
         return true;
     }
 
-    public static void test() {
-        System.out.println("Test");
+    public static <T> void shuffleForward(T[] data, int first, int last) {
+        if (first < 0 || last >= data.length) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        if (last == data.length-1) {
+            data = Arrays.copyOf(data, data.length + 1);
+        }
+        for (int i = last; i >= first; i--) {
+            swap(data, i, i+1);
+        }
     }
 }
